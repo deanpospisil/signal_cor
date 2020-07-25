@@ -848,7 +848,7 @@ fns = [  'rho_sn_vs_m_snr_hi_fxd_stim.nc','rho_sn_vs_m_snr_low_fxd_stim.nc',
 das = [xr.open_dataarray(fn) for fn in fns]
 
 fig, axs = plt.subplots(nrows=1, ncols=4, figsize=(8,3))
-colors = plt.cm.autumn_r(np.linspace(0,1,4))
+colors = plt.cm.cool(np.linspace(0,1,4))
 panel_labels = ['A.', 'B.', 'C.', 'D.', 'E.']
 xlabels = ['m', 'm', 'n', 'SNR', 'SNR']
 titles = ['SNR=1000', 'SNR=0.1', 'm=100', '', 'Split-half $\hat{r}_{signal}$', ] 
@@ -863,15 +863,15 @@ for i, da in enumerate(das):
         n_sims = len(a_da.coords['sim'])
         
         if split==0:
-            alpha=1
+            ls='-'
         else:
-            alpha=0.5
+            ls='--'
             
         for k, a_rho in enumerate(rho_rs_rns):
             axs[i].errorbar(a_da.coords[dim], 
                          a_da.sel(rho=a_rho).mean('sim').squeeze(), 
                          yerr=(a_da.sel(rho=a_rho).std('sim')/n_sims**0.5).squeeze(),
-                         alpha=alpha, color=colors[k])
+                        color=colors[k],  ls=ls)
         
     axs[i].set_yticks(yticks)
     axs[i].set_ylim(ylim)

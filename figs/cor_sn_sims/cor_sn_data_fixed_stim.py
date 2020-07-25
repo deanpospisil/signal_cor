@@ -479,7 +479,7 @@ if os.path.exists(nm):
 da.to_netcdf(nm)  
 '''
 #%%
-n_sims = 500
+n_sims = 1500
 p_cell_pair = 50
 
 
