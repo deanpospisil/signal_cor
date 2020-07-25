@@ -871,7 +871,7 @@ for i, da in enumerate(das):
             axs[i].errorbar(a_da.coords[dim], 
                          a_da.sel(rho=a_rho).mean('sim').squeeze(), 
                          yerr=(a_da.sel(rho=a_rho).std('sim')/n_sims**0.5).squeeze(),
-                         alpha=alpha,color=colors[k])
+                         alpha=alpha, color=colors[k])
         
     axs[i].set_yticks(yticks)
     axs[i].set_ylim(ylim)

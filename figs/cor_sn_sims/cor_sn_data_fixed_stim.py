@@ -268,7 +268,7 @@ for rho_rs_rn, snr, m  in zip([0, 0.8], [0.1, 1], [9 , 9]):
       os.remove(nm)
     d.to_netcdf(nm)
 
-'''
+
 #%%
 n_sims = 5
 p_cell_pair = 50
@@ -425,7 +425,7 @@ if os.path.exists("rho_sn_vs_SNR_split_fxd_stim.nc"):
 da.to_netcdf('rho_sn_vs_SNR_split_fxd_stim.nc')
 
 
-'''
+
 #%%
 sys.path.append('/Users/dean/Desktop/code/science/modules/r2c')
 import r2c_common as r2c
@@ -478,9 +478,8 @@ if os.path.exists(nm):
   os.remove(nm)
 da.to_netcdf(nm)  
 '''
-
 #%%
-n_sims = 1000
+n_sims = 5000
 p_cell_pair = 50
 
 
